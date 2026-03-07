@@ -2,8 +2,5 @@ fastapi
 uvicorn
 feedparser
 pydantic
-
-crewai>=0.11.0
-crewai-tools==0.0.1
 python-dotenv
 pyyaml
