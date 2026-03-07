@@ -1,0 +1,35 @@
+collect_threats:
+  description: >
+    Read every file in sources/ directory. For each document extract
+    source_file, title, date, affected_systems, and a 2-3 sentence
+    summary. Only extract facts present in source text. Do NOT infer
+    or speculate.
+  expected_output: >
+    A structured list of threat items with fields: source_file,
+    title, date, affected_systems, summary.
+  agent: collector
+
+analyze_threats:
+  description: >
+    Take the collector output and for each item produce threat_type,
+    affected_sector, severity with rationale, mitre_mapping (ATT&CK
+    or ATLAS technique IDs), confidence level, and 1-2 watch items.
+  expected_output: >
+    A structured threat assessment for each item with all required
+    fields.
+  agent: analyst
+  context:
+    - collect_threats
+
+write_brief:
+  description: >
+    Using the analyst assessments, produce a Daily Threat Brief in
+    markdown with executive summary, per-item sections (what happened,
+    why it matters, what to watch), and closing notes. Mark as
+    UNCLASSIFIED // FOR EDUCATIONAL USE.
+  expected_output: >
+    A complete markdown Daily Threat Brief.
+  agent: writer
+  context:
+    - analyze_threats
+  output_file: output/daily_brief.md
