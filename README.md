@@ -80,6 +80,6 @@ Khadija Taki
 MSISPM – Carnegie Mellon University  
 Cybersecurity | AI | Space Systems Security
 
-Brian G. Rodiles Delgado
+Brian G. Rodiles Delgado  
 Cybersecurity Management MBA - University of West Florida    
 Industrial Control Systems (ICS) | Operational Technology (OT) | Agentic Infrastructure/Evaluations
